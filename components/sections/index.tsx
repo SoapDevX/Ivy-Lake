@@ -91,7 +91,7 @@ export function DiningSection() {
     <section className="py-24 lg:py-32 bg-[#18392B] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <FadeIn direction="left">
+          <FadeIn direction="in">
             <p className="text-[#C8A96B] text-[10px] tracking-[0.25em] uppercase font-medium mb-6">
               Dining &amp; Café
             </p>
@@ -111,7 +111,7 @@ export function DiningSection() {
             </Link>
           </FadeIn>
 
-          <FadeIn direction="right" className="grid grid-cols-2 gap-3">
+          <FadeIn direction="in" className="grid grid-cols-2 gap-3">
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800"
