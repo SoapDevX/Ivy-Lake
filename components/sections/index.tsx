@@ -74,7 +74,7 @@ export function RoomPreviewSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredRooms.map((room, i) => (
             <FadeIn key={room.id} delay={i * 0.1}>
-              <RoomCard room={room} priority={i === 0} />
+              <RoomCard room={room} />
             </FadeIn>
           ))}
         </div>
