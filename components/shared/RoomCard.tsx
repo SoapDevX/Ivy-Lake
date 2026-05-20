@@ -43,7 +43,7 @@ export function RoomCard({ room, index = 0 }: RoomCardProps) {
           </div>
           <div className="flex flex-wrap gap-1.5 pt-1">
             {room.amenities.slice(0, 4).map(a => (
-              <Badge key={a} variant="ivory" className="text-[10px]">{a}</Badge>
+              <Badge key={a} variant="muted" className="text-[10px]">{a}</Badge>
             ))}
           </div>
         </div>
