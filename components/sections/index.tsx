@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FadeIn } from '@/components/animations/FadeIn'
-import { RoomCard } from '@/components/shared/RoomCard'
-import { featuredRooms } from '@/data/rooms'
+import { RoomCard } from '@/components/ui/RoomCard'
+import { rooms } from '@/data/rooms'
 import { testimonials } from '@/data/testimonials'
 import { attractions } from '@/data/attractions'
-import { buildWhatsAppLink } from '@/lib/utils'
+import { whatsappLink } from '@/lib/utils/whatsappLink'
+
+const featuredRooms = rooms.filter(r => r.featured)
 
 /* ══════════════════════════════════
    Experience Section
@@ -152,26 +154,17 @@ export function SacredCitySection() {
         </FadeIn>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {attractions.map((attr, i) => (
+          {attractions.slice(0, 4).map((attr, i) => (
             <FadeIn key={attr.id} delay={i * 0.1}>
-              <div className="group relative overflow-hidden aspect-[3/4]">
-                <Image
-                  src={attr.image}
-                  alt={attr.name}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F2319]/90 via-[#0F2319]/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[10px] tracking-wider uppercase text-[#C8A96B]">{attr.distance}</span>
-                    <span className="text-[#C8A96B]/40">·</span>
-                    <span className="text-[10px] tracking-wider uppercase text-[#C8A96B]/60">{attr.duration}</span>
-                  </div>
-                  <h3 className="font-serif text-[#F7F4EE] text-xl leading-tight mb-2">{attr.name}</h3>
-                  <p className="text-[#F7F4EE]/60 text-xs leading-relaxed line-clamp-2">{attr.description}</p>
+              <div className="group bg-white border border-[#EDE8DE] p-7 hover:border-[#C8A96B]/40 transition-all duration-500 hover:shadow-md">
+                <div className="text-3xl mb-5">{attr.icon}</div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-[10px] tracking-wider uppercase text-[#C8A96B]">{attr.distance}</span>
+                  <span className="text-[#C8A96B]/40">·</span>
+                  <span className="text-[10px] tracking-wider uppercase text-[#C8A96B]/60">{attr.duration}</span>
                 </div>
+                <h3 className="font-serif text-[#18392B] text-xl leading-tight mb-2">{attr.name}</h3>
+                <p className="text-[#6B7280] text-xs leading-relaxed line-clamp-3">{attr.description}</p>
               </div>
             </FadeIn>
           ))}
@@ -275,7 +268,7 @@ export function TestimonialsSection() {
 
                 <div className="flex items-center justify-between border-t border-[#EDE8DE] pt-5 mt-auto">
                   <div>
-                    <p className="font-medium text-sm text-[#18392B]">{t.author}</p>
+                    <p className="font-medium text-sm text-[#18392B]">{t.name}</p>
                     <p className="text-xs text-[#6B7280]">{t.country} · {t.date}</p>
                   </div>
                   <span className="text-[10px] tracking-wider uppercase text-[#6B7280] opacity-60 capitalize">
@@ -316,7 +309,7 @@ export function BookingCTA() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a
-            href={buildWhatsAppLink()}
+            href={whatsappLink('Hello! I would like to book a room at The Ivy Lake.')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-9 py-4 bg-[#C8A96B] text-[#18392B] text-[11px] tracking-[0.18em] uppercase font-medium hover:bg-[#DFC28F] transition-colors duration-300"
