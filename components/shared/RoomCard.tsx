@@ -33,7 +33,6 @@ export function RoomCard({ room, index = 0 }: RoomCardProps) {
             <div>
               <p className="label-eyebrow text-xs mb-1">{room.size} · {room.beds}</p>
               <h3 className="heading-section text-2xl text-[#18392B]">{room.name}</h3>
-              <p className="text-sm text-[#6B7280] font-sans font-light mt-1">{room.tagline}</p>
             </div>
             <div className="text-right shrink-0">
               <p className="text-xs text-[#6B7280] font-sans">from</p>
