@@ -24,4 +24,5 @@ export function AttractionCard({ attraction, index = 0 }: AttractionCardProps) {
       </div>
     </FadeIn>
   )
+  
 }
