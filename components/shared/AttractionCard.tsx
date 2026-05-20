@@ -1,4 +1,4 @@
-import type { attractions } from '@/data/attractions'
+import { attractions } from '@/data/attractions'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { Badge } from '@/components/ui/Badge'
 
