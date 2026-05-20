@@ -1,0 +1,30 @@
+/* ── Brand Tokens ─────────────────────────────────── */
+:root {
+  --color-forest:       #18392B;
+  --color-forest-light: #2A5240;
+  --color-forest-dark:  #0F2419;
+  --color-gold:         #C8A96B;
+  --color-gold-light:   #E2C99A;
+  --color-gold-dark:    #A8893B;
+  --color-ivory:        #F7F4EE;
+  --color-ivory-dark:   #EDE8DF;
+  --color-charcoal:     #1D1D1D;
+  --color-muted:        #6B7280;
+  --color-white:        #FFFFFF;
+
+  --bg-primary:   var(--color-ivory);
+  --bg-dark:      var(--color-forest);
+  --text-primary: var(--color-charcoal);
+  --text-muted:   var(--color-muted);
+  --accent:       var(--color-gold);
+
+  --section-gap: clamp(5rem, 10vw, 9rem);
+  --container:   min(90rem, 100% - 3rem);
+
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+
+  --ease-luxury: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --duration-base: 400ms;
+}
